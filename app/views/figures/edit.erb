@@ -3,7 +3,7 @@
 <a class="button" href="/figures">Figures</a>
 <a class="button" href="/">Home</a>
 
-<form action="/figures" method="POST">
+<form action="/figures/<%= @figure.id %>" method="POST">
 <input type="hidden" name="_method" value="PATCH">
 <p><label for="figure[name]">Name: </label>
 <input type="text" name="figure[name]" id="figure_name">
