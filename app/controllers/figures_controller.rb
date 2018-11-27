@@ -9,10 +9,11 @@ class FiguresController < ApplicationController
   post '/figures' do
     # create figure
     figure = Figure.new(params[:figure])
-    binding.pry
     # add titles to figure, create if necessary
-    
+    figure.titles << Title.create(name: params[:title][:name]) unless params[:title][:name].empty?
     # add landmarks to figure, create if necessary
+    figure.landmarks << Landmark.create(name: params[:landmark][:name]) unless params[:landmark][:name].empty?
+    figure.save
   end
 
 end
