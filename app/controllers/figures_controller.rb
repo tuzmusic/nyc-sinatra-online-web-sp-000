@@ -23,4 +23,10 @@ class FiguresController < ApplicationController
     figure.save
   end
 
+  # Show action
+  get '/figures/:id' do
+    @figure = Figure.find(params[:id])
+    erb :"figures/show"
+  end
+
 end
