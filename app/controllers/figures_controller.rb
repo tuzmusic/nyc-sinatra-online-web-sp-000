@@ -7,6 +7,12 @@ class FiguresController < ApplicationController
   end
 
   post '/figures' do
+    # create figure
+    figure = Figure.new(params[:figure])
+    binding.pry
+    # add titles to figure, create if necessary
+    
+    # add landmarks to figure, create if necessary
   end
 
 end

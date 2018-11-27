@@ -10,8 +10,12 @@
 
 <p>Select Landmarks:
 <% @landmarks.each do |landmark| %>
- <br> <input type="checkbox" name="figure[landmark_ids][]" id="landmark_<%=landmark.id%>">
- <%= landmark.name %></input>
+ <br> <input type="checkbox" name="figure[landmark_ids][]" id="landmark_<%=landmark.id%>" value="<%=landmark.id%>">
+ <%= landmark.name %>
+
+
+
+
 <% end %>
 </p>
 <p>Or create a new landmark:<br>
@@ -21,8 +25,8 @@
 
 <p>Select Titles:
 <% @titles.each do |title| %>
- <br> <input type="checkbox" name="figure[title_ids][]" id="title_<%=title.id%>">
- <%= title.name %></input>
+ <br> <input type="checkbox" name="figure[title_ids][]" id="title_<%=title.id%>" value="<%=title.id%>">
+ <%= title.name %>
 <% end %>
 </p>
 <p>Or create a new title:<br>
