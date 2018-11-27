@@ -6,7 +6,7 @@
 <form action="/figures/<%= @figure.id %>" method="POST">
 <input type="hidden" name="_method" value="PATCH">
 <p><label for="figure[name]">Name: </label>
-<input type="text" name="figure[name]" id="figure_name">
+<input type="text" name="figure[name]" id="figure_name" value=<%= @figure.name %>>
 </p>
 
 <p>Edit Landmarks:
