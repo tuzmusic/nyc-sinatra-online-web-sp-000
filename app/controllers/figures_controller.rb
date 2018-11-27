@@ -1,5 +1,12 @@
 class FiguresController < ApplicationController
-
+  
+  # Index action
+  get '/figures' do
+    @figures = Figure.all
+    erb :'figures/index'
+  end
+  
+  # Create action
   get '/figures/new' do
     @titles = Title.all
     @landmarks = Landmark.all
