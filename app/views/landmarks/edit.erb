@@ -6,15 +6,15 @@
 <form action="/landmarks/<%= @landmark.id %>" method="POST">
 <input type="hidden" name="_method" value="PATCH">
 <p><label for="landmark[name]">Name: </label>
-<input type="text" name="landmark[name]" id="landmark_name">
+<input type="text" name="landmark[name]" id="name" value=<%= @landmark.name %>>
 </p>
-<p><label for="landmark[year_completed]">Name: </label>
-<input type="text" name="landmark[year_completed]" id="landmark_year_completed">
+<p><label for="landmark[year_completed]">Year Completed: </label>
+<input type="text" name="landmark[year_completed]" id="year_completed" value=<%= @landmark.year_completed %>>
 </p>
 
-<p>Edit Figures:
+<p>Edit Figure:
 <% @figures.each do |figure| %>
- <br> <input type="checkbox" name="landmark[figure_ids][]" id="figure_<%=figure.id%>" value="<%=figure.id%>" <%= 'checked' if @landmark.figures.include?(figure) %>>
+ <br> <input type="radio" name="landmark[figure_id]" id="figure_<%=figure.id%>" value="<%=figure.id%>" <%= 'checked' if @landmark.figure == figure %>>
  <%= figure.name %>
 <% end %>
 </p>
